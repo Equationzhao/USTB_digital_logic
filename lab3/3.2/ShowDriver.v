@@ -55,7 +55,6 @@ module ShowDriver(
             9: seg = 8'b0110_1111;
             10:seg = 8'b0100_0000;
             11:seg = 8'b0000_0000;
-            // default: seg = 8'b0000_1000; show "_"
             default: seg = 8'b0100_0000;  // show "-"
         endcase
 endmodule

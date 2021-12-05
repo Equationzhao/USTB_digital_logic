@@ -69,7 +69,8 @@ module InputShowDriver(
         end 
         else begin
             case (dataP)
-                default: seg = 8'b0000_1000;
+                // default: seg = 8'b0000_1000; show "_"
+                default: seg = 8'b0100_0000;  // show "-"
             endcase
         
         end
