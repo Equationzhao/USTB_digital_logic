@@ -20,9 +20,6 @@ module InputShowDriver(
             pos = 4'b0000;
             posC = 3; // 下次循环显示在第一位
         end
-        // else if (sel) begin
-        //     seg = 8'b0100_0000;
-        // end
         else begin
             posC = posC + 1;
             case (posC) // 根据posC调整数码管位置并调整对应的数据
@@ -62,10 +59,10 @@ module InputShowDriver(
                 9 :seg = 8'b0110_1111;
                 10:seg = 8'b0100_0000;
                 11:seg = 8'b0000_0000;
-            default: seg = 8'b0000_1000;
+                default: seg = 8'b0000_1000;
             endcase
             if (posC == dot) 
-                seg = seg | 8'b1000_0000;//当前数据下方有小数点指示
+                seg = seg + 8'b1000_0000;
         end 
         else begin
             case (dataP)

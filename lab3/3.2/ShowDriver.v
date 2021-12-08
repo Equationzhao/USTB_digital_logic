@@ -1,11 +1,11 @@
 `timescale 1ns / 1ps
-// Ñ­»·ÏÔÊ¾
+// å¾ªç¯æ˜¾ç¤º
 module ShowDriver(
     input clk190hz,
     input rst,
     input [15:0] dataBus,
-    output reg [3:0] pos,//ÊıÂë¹ÜÎ»ÖÃ
-    output reg [7:0] seg //ÊıÂë¹ÜÄÚ¹ÜÏÔÊ¾ĞÅºÅ
+    output reg [3:0] pos,//æ•°ç ç®¡ä½ç½®
+    output reg [7:0] seg //æ•°ç ç®¡å†…ç®¡æ˜¾ç¤ºä¿¡å·
     );
     
     reg [1:0] posC;
@@ -42,7 +42,7 @@ module ShowDriver(
     end
     
     always @(dataP)
-        case (dataP)//Ã¿¸öÊı×Ö¶ÔÓ¦µÄÊıÂë¹ÜÄÚµÄÏÔÊ¾
+        case (dataP)//æ¯ä¸ªæ•°å­—å¯¹åº”çš„æ•°ç ç®¡å†…çš„æ˜¾ç¤º
             0: seg = 8'b0011_1111;
             1: seg = 8'b0000_0110;
             2: seg = 8'b0101_1011;

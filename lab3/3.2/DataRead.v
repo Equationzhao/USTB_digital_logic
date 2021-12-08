@@ -14,7 +14,7 @@ module DataReadService(
                 );
     
     reg [31:0] msgArray = 0;
-    reg [2:0]  cursor   = 7;//7-0¶ÔÓ¦×óµ½ÓÒµÄÊıÂë¹Ü
+    reg [2:0]  cursor   = 7;//7-0å¯¹åº”å·¦åˆ°å³çš„æ•°ç ç®¡
     reg [15:0] dataBus;
     reg LeftMoveDelay   = 0;
     reg RightMoveDelay  = 0;
@@ -34,20 +34,20 @@ module DataReadService(
         end
         else begin
             if (leftMove == 1 && LeftMoveDelay == 0) begin
-                cursor = cursor + 1;// ×óÒÆ
+                cursor = cursor + 1;// å·¦ç§»
             end
             else if (rightMove == 1 && RightMoveDelay == 0) begin 
-                     cursor = cursor - 1;// ÓÒÒÆ
+                     cursor = cursor - 1;// å³ç§»
             end
             else if (inc == 1 && IncreaseDelay == 0) begin  // press increase 
-                     msgArray = msgArray + (4'b0001 << (4*cursor));// ¼ÓÒ»
-                 if (((msgArray >> (4*cursor)) & 4'b1111) == 10) // È¡³öµ±Ç°Î»µÄÊı×Ö ÒÆÎ»²¢È¡¸ßËÄÎ» Èç¹ûÊÇ10 ÔòÖÃ0
+                     msgArray = msgArray + (4'b0001 << (4*cursor));// åŠ ä¸€
+                 if (((msgArray >> (4*cursor)) & 4'b1111) == 10) // å–å‡ºå½“å‰ä½çš„æ•°å­— ç§»ä½å¹¶å–é«˜å››ä½ å¦‚æœæ˜¯10 åˆ™ç½®0
                        msgArray = msgArray - (4'b1010 << (4*cursor));
             end
             else if (dec == 1 && DecreaseDelay == 0) begin  // press decrease                    
-                 if (((msgArray >> (4*cursor)) & 4'b1111) == 0) // È¡³öµ±Ç°Î»µÄÊı×Ö ÒÆÎ»²¢È¡¸ßËÄÎ» Èç¹ûÊÇ0 ÔòÖÃ9, ·ñÔò¼õÒ»
+                 if (((msgArray >> (4*cursor)) & 4'b1111) == 0) // å–å‡ºå½“å‰ä½çš„æ•°å­— ç§»ä½å¹¶å–é«˜å››ä½ å¦‚æœæ˜¯0 åˆ™ç½®9, å¦åˆ™å‡ä¸€
                        msgArray = msgArray + (4'b1001 << (4*cursor));
-                 else  msgArray = msgArray - (4'b0001 << (4*cursor));// ¼õÒ»
+                 else  msgArray = msgArray - (4'b0001 << (4*cursor));// å‡ä¸€
             end
 
             LeftMoveDelay  = leftMove;
@@ -56,8 +56,8 @@ module DataReadService(
             DecreaseDelay  = dec;
         end
          
-        if (cursor<4) dataBus = msgArray[15:0]; // ·Ö¶Î
-        else dataBus = msgArray[31:16];         // ÏÔÊ¾
+        if (cursor<4) dataBus = msgArray[15:0]; // åˆ†æ®µ
+        else dataBus = msgArray[31:16];         // æ˜¾ç¤º
     end
     InputShowDriver u(clk190hz, rst,sel, dataBus, cursor[1:0], pos, seg);
 endmodule
