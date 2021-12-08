@@ -7,7 +7,7 @@ module csadd32(
 );
         wire temp;
         add16 add16_instance1(.a(a[15:0]),.b(b[15:0]),.cin(cin),.sum(sum[15:0]),.cout(temp));
-        add16 add16_instance2(.a(a[31:16]),.b(b[31:16]),.cin(c),.sum(sum[31:16]),.cout(cout));
+        add16 add16_instance2(.a(a[31:16]),.b(b[31:16]),.cin(cin),.sum(sum[31:16]),.cout(cout));
 
 endmodule
  
