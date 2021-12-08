@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-// Ñ¡ÔñÄ£Ê½
+// é€‰æ‹©æ¨¡å¼
 module InputShowDriver(
     input clk190hz,
     input rst,
@@ -18,14 +18,14 @@ module InputShowDriver(
         if (!rst) 
         begin
             pos = 4'b0000;
-            posC = 3; // ÏÂ´ÎÑ­»·ÏÔÊ¾ÔÚµÚÒ»Î»
+            posC = 3; // ä¸‹æ¬¡å¾ªç¯æ˜¾ç¤ºåœ¨ç¬¬ä¸€ä½
         end
         // else if (sel) begin
         //     seg = 8'b0100_0000;
         // end
         else begin
             posC = posC + 1;
-            case (posC) // ¸ù¾İposCµ÷ÕûÊıÂë¹ÜÎ»ÖÃ²¢µ÷Õû¶ÔÓ¦µÄÊı¾İ
+            case (posC) // æ ¹æ®posCè°ƒæ•´æ•°ç ç®¡ä½ç½®å¹¶è°ƒæ•´å¯¹åº”çš„æ•°æ®
                 0: begin
                     pos   <= 4'b0001;
                     dataP <= dataBus[3:0];
@@ -65,7 +65,7 @@ module InputShowDriver(
             default: seg = 8'b0000_1000;
             endcase
             if (posC == dot) 
-                seg = seg | 8'b1000_0000;//µ±Ç°Êı¾İÏÂ·½ÓĞĞ¡ÊıµãÖ¸Ê¾
+                seg = seg | 8'b1000_0000;//å½“å‰æ•°æ®ä¸‹æ–¹æœ‰å°æ•°ç‚¹æŒ‡ç¤º
         end 
         else begin
             case (dataP)

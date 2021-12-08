@@ -5,16 +5,7 @@ module top_module (
     input d,
     output q 
 );
-    
+
+assign q = a & c | b & c | a & d | b & d;
 
 endmodule
-
-// bd
-// dc
-// bcd
-// ad
-// ac
-// acd
-// abd
-// abc
-// abcd
