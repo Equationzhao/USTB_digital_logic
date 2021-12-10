@@ -13,7 +13,7 @@ module seqdetea(
         end    
         else begin
             present_state <= next_state;
-        end
+		end
     end
 
     always @(*) begin

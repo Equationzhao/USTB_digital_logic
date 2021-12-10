@@ -4,7 +4,7 @@ module seqdetea_tb;
     wire dout;
 
     parameter PERIOD = 40;
-    seqdetea seqdetea_inst(
+    seqdetea seqdetea_instance(
         .clk(clk),
         .clr(clr),
         .din(din),
@@ -23,13 +23,15 @@ module seqdetea_tb;
         clr = 1;
         forever begin
             #50 clr = 0;
+            #200 clr = 1;
         end
     end
 
-    initial begin //10001
+    initial begin  //10001
         #50  din = 1;
         #40  din = 0;
         #120 din = 1;
+        
     end
 
 endmodule
