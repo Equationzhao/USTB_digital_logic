@@ -22,16 +22,275 @@ module seqdetea_tb;
     initial begin
         clr = 1;
         forever begin
-            #50 clr = 0;
+            #40 clr = 0;
             #200 clr = 1;
         end
     end
 
     initial begin  //10001
-        #50  din = 1;
+        #40  din = 1;
         #40  din = 0;
-        #120 din = 1;
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 1;
         
+        #40  din = 0;
+        
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 0;
+
+        #40  din = 0;
+        
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 1;
+
+        #40  din = 0;
+        
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 0;
+
+        #40  din = 0;
+        
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 1;
+
+        #40  din = 0;
+        
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 0;
+
+        #40  din = 0;
+        
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 1;
+        
+        #40  din = 0;
+        
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 0;
+
+        #40  din = 0;
+        
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 1;
+
+        #40  din = 0;
+        
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 0;
+
+        #40  din = 0;
+        
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 1;
+        
+        #40  din = 0;
+        
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 0;
+        
+        #40  din = 0;
+        
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 1;
+        
+        #40  din = 0;
+        
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 0;
+        
+        #40  din = 0;
+        
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 1;
+        
+        #40  din = 0;
+        
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 0;
+        
+        #40  din = 0;
+        
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 1;
+        
+        #40  din = 0;
+        
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 0;
+        
+        #40  din = 0;
+        
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 1;
+        
+        #40  din = 0;
+        
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 0;
+        
+        #40  din = 0;
+        
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 1;
+        
+        #40  din = 0;
+        
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 0;
+        
+        #40  din = 0;
+        
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 1;
+        
+        #40  din = 0;
+        
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 0;
+        
+        #40  din = 0;
+        
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 1;
+        
+        #40  din = 0;
+        
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 0;
+        
+        #40  din = 0;
+        
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 0;
+        #40  din = 1;
+        
+        #40  din = 0;
+        
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 0;
+        
+        #40  din = 0;
+        
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 1;
+        #40  din = 1;
+        
+        #40  din = 0;
+
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 0;
+        
+        #40  din = 0;
+
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 0;
+        #40  din = 1;
+        
+        #40  din = 0;
+
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 0;
+        
+        #40  din = 0;
+
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 1;
+        #40  din = 1;
+        
+
     end
 
 endmodule

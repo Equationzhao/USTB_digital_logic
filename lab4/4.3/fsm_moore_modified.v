@@ -36,21 +36,21 @@ module seqdetea(
                 next_state <= S3;
             end
             else begin
-                next_state <= S2;
+                next_state <= S1;
             end
 
             S3: if (din==0) begin
                 next_state <= S4;
             end
             else begin
-                next_state <= S0;
+                next_state <= S1;
             end
 
-            S4: if (din==0) begin
-                next_state <= S0;
+            S4: if (din==1) begin
+                next_state <= S5;
             end
             else begin
-                next_state <= S5;
+                next_state <= S0;
             end
             
             S5: if (din==1) begin
@@ -66,7 +66,7 @@ module seqdetea(
 
     always @(*) begin
         if (present_state == S5) begin
-           dout = 1;
+            dout = 1;
         end 
         else begin
               dout = 0;

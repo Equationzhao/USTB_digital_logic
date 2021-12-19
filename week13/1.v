@@ -5,9 +5,9 @@ module top_module (
 );
     reg [3:0] count;
 
-    always @(posedge clk or negedge reset)
+    always @(posedge clk )
             if (reset) //reset
-                count <= 4'd0; 
+                count <= 4'd1; 
             else if (count==4'd10) 
                 count <= 4'd0; //置零 
             else 

@@ -13,7 +13,7 @@ module top(
     wire clk190hz, clk3hz;
     wire [31:0] StuId;
     wire [15:0] dataBus;
-
+    
     clkDiv            ClkDivision_instance(clk100mhz, clk190hz, clk3hz);
     DataShowService   DataShowService_instance(clk190hz, clk3hz, rst & sel, StuId, pos1, seg1);
     DataReadService   DataReadService_instance(clk190hz, rst, sel, leftMove, rightMove, increase, decrease, pos2, seg2, StuId);
