@@ -23,274 +23,38 @@ module seqdetea_tb;
         clr = 1;
         forever begin
             #40 clr = 0;
-            #200 clr = 1;
+            // #200 clr = 1;
         end
     end
 
     initial begin  //10001
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 1;
-        
-        #40  din = 0;
-        
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 0;
-
-        #40  din = 0;
-        
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 1;
-
-        #40  din = 0;
-        
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 0;
-
-        #40  din = 0;
-        
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 1;
-
-        #40  din = 0;
-        
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 0;
-
-        #40  din = 0;
-        
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 1;
-        
-        #40  din = 0;
-        
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 0;
-
-        #40  din = 0;
-        
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 1;
-
-        #40  din = 0;
-        
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 0;
-
-        #40  din = 0;
-        
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 1;
-        
-        #40  din = 0;
-        
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 0;
-        
-        #40  din = 0;
-        
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 1;
-        
-        #40  din = 0;
-        
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 0;
-        
-        #40  din = 0;
-        
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 1;
-        
-        #40  din = 0;
-        
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 0;
-        
-        #40  din = 0;
-        
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 1;
-        
-        #40  din = 0;
-        
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 0;
-        
-        #40  din = 0;
-        
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 1;
-        
-        #40  din = 0;
-        
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 0;
-        
-        #40  din = 0;
-        
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 1;
-        
-        #40  din = 0;
-        
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 0;
-        
-        #40  din = 0;
-        
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 1;
-        
-        #40  din = 0;
-        
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 0;
-        
-        #40  din = 0;
-        
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 1;
-        
-        #40  din = 0;
-        
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 0;
-        
-        #40  din = 0;
-        
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 0;
-        #40  din = 1;
-        
-        #40  din = 0;
-        
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 0;
-        
-        #40  din = 0;
-        
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 1;
-        #40  din = 1;
-        
-        #40  din = 0;
-
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 0;
-        
-        #40  din = 0;
-
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 0;
-        #40  din = 1;
-        
-        #40  din = 0;
-
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 0;
-        
-        #40  din = 0;
-
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 1;
-        #40  din = 1;
-        
-
+        #40 din = 0; //s0
+        #40 din = 0; //s0
+        #40 din = 1; //s1
+        #40 din = 1; //s1
+        #40 din = 0; //s2
+        #40 din = 1; //s1
+        #40 din = 0; //s2
+        #40 din = 0; //s3
+        #40 din = 1; //s1
+        #40 din = 0; //s2
+        #40 din = 0; //s3
+        #40 din = 0; //s4
+        #40 din = 0; //s0
+        #40 din = 1; //s1
+        #40 din = 0; //s2
+        #40 din = 0; //s3
+        #40 din = 0; //s4
+        #40 din = 1; //s5
+        #40 din = 0; //s2
+        #40 din = 0; //S3
+        #40 din = 0; //s4
+        #40 din = 1; //s5
+        #40 din = 1; //s1
+        #40 din = 0; //s2
+        #40 din = 0; //S3
+        #40 din = 0; //s4
+        #40 din = 1; //s5
     end
 
 endmodule

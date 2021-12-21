@@ -17,7 +17,7 @@ module seqdetea(
     end
 
     always @(*) begin
-        case (present_state)
+        case (present_state)    // 10001
             S0: if (din==1) begin
                 next_state <= S1;
             end
@@ -29,7 +29,7 @@ module seqdetea(
                 next_state <= S2;
             end
             else begin
-                next_state <= S0;
+                next_state <= S1;
             end
 
             S2: if (din==0) begin
@@ -57,7 +57,7 @@ module seqdetea(
                 next_state <= S1;
             end
             else begin
-                next_state <= S0;
+                next_state <= S2;
             end
             default: next_state <= S0;
         endcase
@@ -69,7 +69,7 @@ module seqdetea(
             dout = 1;
         end 
         else begin
-              dout = 0;
+            dout = 0;
         end
     end
 
