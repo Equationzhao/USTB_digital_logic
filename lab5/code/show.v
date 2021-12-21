@@ -7,7 +7,7 @@ module show(
     input [31:0] myID,
     output [3:0] pos,
     output [7:0] seg
-    );
+);
     
     wire [15:0] dataBus;
     GPU     u1(clk3hz, rst, myID, dataBus);

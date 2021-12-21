@@ -1,6 +1,10 @@
 `timescale 1ns / 1ps
 
-module press(input clk190hz, input press, output signal);
+module press(
+    input clk190hz,
+    input press, 
+    output signal
+);
     reg[5:0] de;
     
     always @(posedge clk190hz)
