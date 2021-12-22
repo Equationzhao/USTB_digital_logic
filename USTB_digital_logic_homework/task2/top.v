@@ -11,13 +11,13 @@ output 		[3:0] 	pos_f,
 output 		[7:0] 	seg_f,
 output 		[3:0] 	pos_b,
 output 		[7:0] 	seg_b
-    );
+);
     /*顶层连接线：
         clk190hz:将分频模块的190hz信号连接到数码管显示模块
         clk3hz:将分频模块的3
         hz信号连接到处理显示GPU模块
         dataBus：将处理模块处理后的数据连接到数码管显示模块
-        */
+    */
     wire clk190hz,clk3hz;
     wire 	[15:0]	dataBus_f;
 	wire	[3:0]	pos_f_tmp;//前四个数码管

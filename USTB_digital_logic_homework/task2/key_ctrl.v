@@ -1,14 +1,14 @@
 module key_ctrl(
 	input		clk,
 	input		rst_n,
-	input		key_wei,//更改位数的按键，按下加1
+	input		key_wei,  //更改位数的按键，按下加1
 	input		key_shuzi,//更改数字的按键，按下加1
 	input		key_enter,//确认按键
 	input		key_input,//输入模式按键，如果需要输入学号按下该按键，进入输入状态
-	input		key_disp,//显示模式按键，按下则循环显示学号
-	output	reg	[3:0]	weishu,//输入学号的位数
+	input		key_disp, //显示模式按键，按下则循环显示学号
+	output	reg	[3:0]	weishu, //输入学号的位数
 	output	reg	[3:0]	shuzi=0,//实时输入的数字
-	output		[31:0]	disp_data,//需要显示的数字
+	output		[31:0]	disp_data,  //需要显示的数字
 	output	reg			disp_data_en//当高电平时后四个数码管显示，低电平时前四个数码管显示
 );
 parameter	IDLE		=4'd0;

@@ -3,8 +3,8 @@ module time_top(
 	input			rst_n,
 	input			key_start,
 	input			key_hour_up,//设置小时
-	input			key_min_up,//设置分钟
-	input			key_sec_up	,//设置秒
+	input			key_min_up, //设置分钟
+	input			key_sec_up, //设置秒
 	input			key_enter,
 	output 		[3:0] 	pos_f,
 	output 		[7:0] 	seg_f,
