@@ -31,16 +31,16 @@ module segMsg2(
 		end
 		if (rst||rst_delay) begin
 			if (rst_delay == 0) begin
-				num = 0;
-				pos = 4'b1111; //置数
+				num  = 0;
+				pos  = 4'b1111;
 				posC = 0;
 				dataP = 0;
-				rst_dela = 1;
+				rst_delay = 1;
 			end
 		end
 		else if(sel||sel_delay) begin
 			if (sel_delay == 0) begin
-				num = num+1;
+				num = num + 1;
 				sel_delay = 1;
 			end
 			posC = posC + 1;
@@ -65,7 +65,7 @@ module segMsg2(
 		end
 		else begin
 			posC = posC + 1;
-			case (posC) //根据posC调整数码管位置并调整对应的数据
+			case (posC) 
 				0: begin
 					pos   <= 4'b0001;
 					dataP <= dataBus1;

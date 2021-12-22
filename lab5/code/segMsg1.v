@@ -15,8 +15,8 @@ module segMsg1(
     reg [15:0] totalNum;
     reg rst_delay = 0;
     reg sel_delay = 0;
-    reg [3:0]mid11;
-    reg [3:0]mid22;
+    reg [3:0] mid11;
+    reg [3:0] mid22;
     assign dataBus=mid1*mid2;
 
     always @(posedge clk190hz) begin
@@ -28,14 +28,14 @@ module segMsg1(
         end
         if (rst||rst_delay) begin
             totalNum=0;
-            pos = 4'b1111;//置数
-            posC = 0;
-            dataP=0;
+            pos   = 4'b1111;
+            posC  = 0;
+            dataP = 0;
             rst_delay=1;
         end
         else if(sel||sel_delay) begin
             if (sel_delay == 0) begin
-                totalNum=totalNum+dataBus;
+                totalNum = totalNum+dataBus;
                 sel_delay = 1;
             end
             case (posC)
