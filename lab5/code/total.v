@@ -15,11 +15,13 @@ module calculate(
 	output [3:0] pos,
 	output [7:0] seg
 );
+
 	wire [3:0] mid1;
 	wire [3:0] mid2;
 	assign mid1 = {but4,but3,but2,but1};
 	assign mid2 = {but8,but7,but6,but5};
 
+	// calculate & display
 	segMsg1 u(clk190hz, rst, sel, mid1, mid2, pos, seg);
 	
 endmodule

@@ -4,30 +4,34 @@ module segMsg2(
 	input clk190hz,
 	input rst,
 	input sel,
+    ///////////////////////////////
 	input [3:0] dataBus1,
 	input [3:0] dataBus2,
+    ///////////////////////////////
 	input [3:0] dataBus3,
 	input [3:0] dataBus4,
+    ///////////////////////////////
 	output reg [3:0] pos,
 	output reg [7:0] seg
 );
 
-	reg [3:0] dataBus11 = 0, dataBus22 = 0, dataBus33 = 0, dataBus44 = 0;
+	reg [3:0] dataBus1_previous = 0, dataBus2_previous = 0, dataBus3_previous = 0, dataBus4_previous = 0;
 	reg [1:0] posC;
 	reg [3:0] dataP;
 	reg [3:0] num;
+
 	reg rst_delay = 0;
 	reg sel_delay = 0;
 
 	always @(posedge clk190hz) 
 	begin
-		if(dataBus1!=dataBus11||dataBus2!=dataBus22||dataBus3!=dataBus33||dataBus4!=dataBus44) begin
+		if(dataBus1!=dataBus1_previous||dataBus2!=dataBus2_previous||dataBus3!=dataBus3_previous||dataBus4!=dataBus4_previous) begin
 			rst_delay = 0;
 			sel_delay = 0;
-			dataBus11 <= dataBus1;
-			dataBus22 <= dataBus2;
-			dataBus33 <= dataBus3;
-			dataBus44 <= dataBus4;
+			dataBus1_previous <= dataBus1;
+			dataBus2_previous <= dataBus2;
+			dataBus3_previous <= dataBus3;
+			dataBus4_previous <= dataBus4;
 		end
 		if (rst||rst_delay) begin
 			if (rst_delay == 0) begin
@@ -43,8 +47,7 @@ module segMsg2(
 				num = num + 1;
 				sel_delay = 1;
 			end
-			posC = posC + 1;
-			case (posC) //根据posC调整数码管位置并调整对应的数据
+			case (posC) 
 				0: begin
 					pos   <= 4'b0001;
 					dataP <= num%10;
@@ -62,9 +65,9 @@ module segMsg2(
 					dataP <= 4'b1010;
 				end
 			endcase
+			posC = posC + 1;
 		end
 		else begin
-			posC = posC + 1;
 			case (posC) 
 				0: begin
 					pos   <= 4'b0001;
@@ -83,6 +86,7 @@ module segMsg2(
 					dataP <= dataBus4;
 				end
 			endcase
+			posC = posC + 1;
 		end
 	end
    

@@ -4,27 +4,31 @@ module segMsg1(
     input clk190hz,
     input rst,
     input sel,
-    input [3:0]mid1,
-    input [3:0]mid2,
+    input [3:0] mid1,
+    input [3:0] mid2,
     output reg [3:0] pos,
     output reg [7:0] seg
 );
+
     wire [15:0] dataBus;
     reg [1:0] posC;
     reg [3:0] dataP;
     reg [15:0] totalNum;
+
     reg rst_delay = 0;
     reg sel_delay = 0;
-    reg [3:0] mid11;
-    reg [3:0] mid22;
-    assign dataBus=mid1*mid2;
+
+    //* like flag (isChanged)
+    reg [3:0] mid1_previous, mid2_previous;
+
+    assign dataBus = mid1 * mid2; //* calculate
 
     always @(posedge clk190hz) begin
-        if(mid1!=mid11||mid2!=mid22) begin
+        if(mid1!=mid1_previous||mid2!=mid2_previous) begin
             rst_delay = 0;
             sel_delay = 0;
-            mid11<=mid1;
-            mid22<=mid2;
+            mid1_previous<=mid1;
+            mid2_previous<=mid2;
         end
         if (rst||rst_delay) begin
             totalNum=0;
@@ -35,7 +39,7 @@ module segMsg1(
         end
         else if(sel||sel_delay) begin
             if (sel_delay == 0) begin
-                totalNum = totalNum+dataBus;
+                totalNum = totalNum + dataBus;
                 sel_delay = 1;
             end
             case (posC)

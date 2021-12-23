@@ -5,10 +5,10 @@ module top(
     input rst,
     input sel,
 ////////////////////////////////////////
-    input but1, // input number
-    input but2, // input number
-    input but3, // input number
-    input but4, // input number
+    input but1, // input weight
+    input but2, // input weight
+    input but3, // input weight
+    input but4, // input weight
 ////////////////////////////////////////
     input but5, // input unit price
     input but6, // input unit price
@@ -26,7 +26,7 @@ module top(
     
     clkDiv u1(clk100mhz, clk190hz, clk3hz);
 
-    read   u2(clk190hz, rst_, sel_, but1, but2, but3, but4, but5, but6, but7, but8, pos1, seg1); // read AND display `number & unit price` AND calculate the price
+    read   u2(clk190hz, rst_, sel_, but1, but2, but3, but4, but5, but6, but7, but8, pos1, seg1); // read AND display `weight & unit price` AND calculate the price
     calculate  u3(clk190hz, rst_, sel_, but1, but2, but3, but4, but5, but6, but7, but8, pos2, seg2); // add to `total price` AND display
     
     press  c1(clk190hz, rst, rst_);

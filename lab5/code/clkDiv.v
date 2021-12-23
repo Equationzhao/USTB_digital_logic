@@ -5,6 +5,7 @@ module clkDiv(
     output clk190hz, 
     output clk3hz
 );
+
     reg [25:0] cnt = 0;
     
     assign clk190hz = cnt[18];
@@ -13,4 +14,5 @@ module clkDiv(
     always @(posedge clk100mhz) begin
         cnt = cnt + 1;
     end
+
 endmodule
