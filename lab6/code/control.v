@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 //* control state 
 module control(
-	input  clk, // clk12hz
-	input  clk2,// clk12hz
-	input  clr, // clr
+	input  clk,        // clk12hz
+	input  clk2,       // clk12hz
+	input  clr,        // clr
 	input  liftGoUp,   // liftGoUp
 	input  liftGoDown, // liftGoDown
 	input  openDoor,   // openDoor
@@ -16,7 +16,7 @@ module control(
 
 	//*		`run = 2'b01` means the elevator is going down,
 	//*		`run = 2'b10` means the elevator is going up 
-    //!     `run` SHOULD NOT BE 2'b00||2'b11
+	//!     `run` SHOULD NOT BE 2'b00||2'b11
 	reg [1:0] run=0; 
 
 	assign run1=run[0];
@@ -68,7 +68,7 @@ module control(
 	end
 
 	//* check fsm.png for detail 
-    //* fsm *//
+	//* fsm *//
 	always@(*) begin
 	case(present_state)
 		S0: 
@@ -138,7 +138,7 @@ module control(
 	end
 
 
-    //* outputs *//
+	//* outputs *//
 	always@(*) begin
 		if(run==1) begin 
 			if(canrun==4'b1100)

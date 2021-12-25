@@ -25,5 +25,5 @@ module calculate(
     assign mid2 = {but8,but7,but6,but5};
    
    
-    segMsg1 u(clk190hz, rst,sel, mid1,mid2, pos, seg);
+    segMsg1 u(clk190hz, rst, sel, mid1, mid2, pos, seg);
 endmodule
