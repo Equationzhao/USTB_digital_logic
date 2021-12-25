@@ -25,9 +25,11 @@ module segMsg2(
 
 	always @(posedge clk190hz) 
 	begin
-		if(dataBus1!=dataBus1_previous||dataBus2!=dataBus2_previous||dataBus3!=dataBus3_previous||dataBus4!=dataBus4_previous) begin
-			rst_delay = 0;
-			sel_delay = 0;
+		if(dataBus1!=dataBus1_previous||dataBus2!=dataBus2_previous||
+            dataBus3!=dataBus3_previous||dataBus4!=dataBus4_previous) begin
+
+			rst_delay = 0; //*   set to 0    //
+			sel_delay = 0; //* to swith back //
 			dataBus1_previous <= dataBus1;
 			dataBus2_previous <= dataBus2;
 			dataBus3_previous <= dataBus3;
@@ -35,9 +37,9 @@ module segMsg2(
 		end
 		if (rst||rst_delay) begin
 			if (rst_delay == 0) begin
-				num  = 0;
-				pos  = 4'b1111;
-				posC = 0;
+				num   = 0;
+				pos   = 4'b1111;
+				posC  = 0;
 				dataP = 0;
 				rst_delay = 1;
 			end
@@ -47,7 +49,7 @@ module segMsg2(
 				num = num + 1;
 				sel_delay = 1;
 			end
-			case (posC) 
+			case (posC) //* "ACXX"
 				0: begin
 					pos   <= 4'b0001;
 					dataP <= num%10;
@@ -89,7 +91,6 @@ module segMsg2(
 			posC = posC + 1;
 		end
 	end
-   
 	
 	always @(posC)
 	begin

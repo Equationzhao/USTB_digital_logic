@@ -78,6 +78,7 @@ module segMsg1(
                 end
                 3: begin
                     pos   <= 4'b1000;
+                    dataP <= (dataBus/1000)%10;
                 end
             endcase
             posC = posC + 1;
