@@ -20,22 +20,22 @@ module segMsg(
 
     always@(posedge clk190hz) begin
         case(posc)
-            0:
+            0: // floor
                 begin
                 pos<=4'b1000;
                 data<=floor[3:0];
                 end
-            1:
+            1: // status
                 begin
                 pos<=4'b0100;
                 data<=status[3:0];
                 end
-            2:
+            2: // pstate
                 begin
                 pos<=4'b0010;
                 data<=pstate[3:0];
                 end
-            3:
+            3: // door
                 begin
                 pos<=4'b0001;
                 data<=door[3:0];

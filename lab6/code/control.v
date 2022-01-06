@@ -8,7 +8,7 @@ module control(
 	input  liftGoDown, // liftGoDown
 	input  openDoor,   // openDoor
 	output reg[1:0]floor,
-	output reg direction,
+	output reg direction, //  0 -> up, 1 -> down 
 	output run1,
 	output [3:0] state1
 );
@@ -34,7 +34,7 @@ module control(
 	*           S6=GoDownToFloor2
 	*           S7=GoUpToFloor4
 	*           S8=StopAtFloor4
-	*           S9=GoDownToFloor
+	*           S9=GoDownToFloor3
 	*/
 	parameter   S0=4'b0000,
 				S1=4'b0001,
@@ -49,7 +49,7 @@ module control(
 
 
 	always@( negedge clk2 ) begin
-		if(run==2'b01) begin
+		if(run==2'b01||run==2'b10) begin
 			if(canrun<4'b1110)
 				canrun=canrun+1;
 			else
@@ -63,26 +63,27 @@ module control(
 	always@(posedge clk or posedge clr) begin
 		if(clr==1)
 			present_state<=S0;
-		else if((1))
+		else
 			present_state<=next_state;
 	end
 
-	//* check fsm.png for detail 
+	//* check fsm.jpg for detail 
 	//* fsm *//
 	always@(*) begin
 	case(present_state)
 		S0: 
 		if(openDoor)
-			next_state<=S0;
+			next_state=S0;
 		else if(liftGoUp)
-			next_state<=S1;
+			next_state=S1;
 		else 
-			next_state<=S0;
+			next_state=S0;
 		S1: 
 		if(openDoor)
-			next_state<=S0;
+			next_state=S0;
 		else if(run==2'b10)
-			next_state<=S2;
+			next_state=S2;
+		
 		S2: 
 		if(openDoor)
 			next_state<=S2;
@@ -97,43 +98,49 @@ module control(
 			next_state<=S2;
 		else if(run==2'b10) 
 			next_state<=S0;
+		
 		S4: 
 		if(openDoor)
-			next_state<=S2;
+			next_state=S2;
 		else if(run==2'b10)
-			next_state<=S5;
+			next_state=S5;
+		
 		S5: 
 		if(openDoor)
-			next_state<=S5;
+			next_state=S5;
 		else if(liftGoUp)
-			next_state<=S7;
+			next_state=S7;
 		else if(liftGoDown)
-			next_state<=S6;
+			next_state=S6;
 		else 
-			next_state<=S5;
+			next_state=S5;
 		S6: 
 		if(openDoor)
-			next_state<=S5;
+			next_state=S5;
 		else if(run==2'b10)
-			next_state<=S2;
+			next_state=S2;
+		
 		S7: 
 		if(openDoor)
-			next_state<=S5;
+			next_state=S5;
 		else if(run==2'b10)
-			next_state<=S8;
+			next_state=S8;
+
 		S8: 
 		if(openDoor)
-			next_state<=S8;
+			next_state=S8;
 		else if(liftGoDown)
-			next_state<=S9;
+			next_state=S9;
 		else 
-			next_state<=S8;
+			next_state=S8;
 		S9: 
 		if(openDoor)
-			next_state<=S8;
+			next_state=S8;
 		else if(run==2'b10)
-			next_state<=S5;
-		default:next_state<=S0;
+			next_state=S5;
+		
+		default:
+		  next_state=S0;
 	endcase 
 	end
 
@@ -143,6 +150,7 @@ module control(
 		if(run==1) begin 
 			if(canrun==4'b1100)
 				run=2'b10;
+			
 		end
 		else begin
 			case(present_state)

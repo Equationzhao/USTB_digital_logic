@@ -18,7 +18,7 @@ module segMsg1(
     reg rst_delay = 0;
     reg sel_delay = 0;
 
-    //* like flag (isChanged)
+    //* flag (isChanged)
     reg [3:0] mid1_previous, mid2_previous;
 
     assign dataBus = mid1 * mid2; //* calculate

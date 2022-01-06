@@ -27,7 +27,7 @@ module top(
     clkDiv u1(clk100mhz, clk190hz, clk3hz);
 
     //* read AND display `number & unit price` AND calculate the price
-    read   u2(clk190hz, rst_, sel_, but1, but2, but3, but4, but5, but6, but7, but8, pos1, seg1); 
+    read  u2(clk190hz, rst_, sel_, but1, but2, but3, but4, but5, but6, but7, but8, pos1, seg1); 
     
     //* add to `total price` AND display
     calculate  u3(clk190hz, rst_, sel_, but1, but2, but3, but4, but5, but6, but7, but8, pos2, seg2);
